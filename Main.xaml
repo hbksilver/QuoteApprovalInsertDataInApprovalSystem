@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>656,2559</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>686,2589</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -61,7 +61,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This processes retrieves the data extracted from a quotation (based on a specific taxonomy) and inserts it in an internal system where the quotations are approved. &#xA;&#xA;In Arguments:&#xA;QuoteNumber (String) - the quote number as extracted from the quotation&#xA;QuoteDate (DateTime) - the quote date as extracted from the quotation&#xA;CompanyName (String) - the name of the company for which the quotation was created&#xA;Item (String) - the name/description of the item requested on the quotation&#xA;Rate (Double) - the item price (per piece)&#xA;Qty (Int32) - the requested item quantity&#xA;LineAmount (Double) - the total price of the specific item (Rate*Qty) as extracted from the quotation&#xA;Discount (Int32) - the offered discount as extracted from the quotation&#xA;Total (Double) - the total price of the quotation&#xA;&#xA;Out Arguments:&#xA;ApprovalTimeStamp (DateTime) - the quotation approval timestamp (after confirmation message is displayed)&#xA;" DisplayName="Quote Approval" sap:VirtualizedContainerService.HintSize="636,2459" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="This processes retrieves the data extracted from a quotation (based on a specific taxonomy) and inserts it in an internal system where the quotations are approved. &#xA;&#xA;In Arguments:&#xA;QuoteNumber (String) - the quote number as extracted from the quotation&#xA;QuoteDate (DateTime) - the quote date as extracted from the quotation&#xA;CompanyName (String) - the name of the company for which the quotation was created&#xA;Item (String) - the name/description of the item requested on the quotation&#xA;Rate (Double) - the item price (per piece)&#xA;Qty (Int32) - the requested item quantity&#xA;LineAmount (Double) - the total price of the specific item (Rate*Qty) as extracted from the quotation&#xA;Discount (Int32) - the offered discount as extracted from the quotation&#xA;Total (Double) - the total price of the quotation&#xA;&#xA;Out Arguments:&#xA;ApprovalTimeStamp (DateTime) - the quotation approval timestamp (after confirmation message is displayed)&#xA;" DisplayName="Quote Approval" sap:VirtualizedContainerService.HintSize="636,2524" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="Browser" />
       <Variable x:TypeArguments="x:String" Name="AppURL" />
@@ -72,28 +72,28 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="QuotationsApproval_AppUrl" DisplayName="Get App URL Asset" sap:VirtualizedContainerService.HintSize="594,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="QuotationsApproval_AppUrl" DisplayName="Get App URL Asset" sap:VirtualizedContainerService.HintSize="594,79" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[AppURL]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="594,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inserting Quote Number &quot; + QuoteNumber + &quot; in the system for approval. Opening application...&quot;]" />
-    <TryCatch DisplayName="Try Approving the Quotation" sap:VirtualizedContainerService.HintSize="594,1907" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Approving the Quotation" sap:VirtualizedContainerService.HintSize="594,1915" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="Inserts the received data in the app and presses submit to approve the quotation. In case the confirmation message isn't displayed in due time, an error is thrown to notify the user the quotation might not have been successfully approved." DisplayName="Insert Data and Approve Invoice" sap:VirtualizedContainerService.HintSize="556,1680" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap2010:Annotation.AnnotationText="Inserts the received data in the app and presses submit to approve the quotation. In case the confirmation message isn't displayed in due time, an error is thrown to notify the user the quotation might not have been successfully approved." DisplayName="Insert Data and Approve Invoice" sap:VirtualizedContainerService.HintSize="556,1688" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="514,1469" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[Browser]" Url="[AppURL]">
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="514,1477" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[Browser]" Url="[AppURL]">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1370" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1378" sap2010:WorkflowViewState.IdRef="Sequence_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -219,7 +219,7 @@
                     </ui:TypeInto>
                   </Sequence>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Inserted quotation data. Submitting it to approve the quotation&quot;]" />
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" sap2010:Annotation.AnnotationText="Submit = Approve the Quotation" ClickType="CLICK_SINGLE" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="438,133" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" sap2010:Annotation.AnnotationText="Submit = Approve the Quotation" ClickType="CLICK_SINGLE" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="438,137" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -246,7 +246,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:Click>
-                  <TryCatch sap2010:Annotation.AnnotationText="Finds confirmation message &amp; throws exception if not found" DisplayName="Try Finding Approval Message" sap:VirtualizedContainerService.HintSize="438,360" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <TryCatch sap2010:Annotation.AnnotationText="Finds confirmation message &amp; throws exception if not found" DisplayName="Try Finding Approval Message" sap:VirtualizedContainerService.HintSize="438,364" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -316,7 +316,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="Clean up before rethrowing the exception" DisplayName="Kill IE and Rethrow" sap:VirtualizedContainerService.HintSize="242,218" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence sap2010:Annotation.AnnotationText="Clean up before rethrowing the exception" DisplayName="Kill IE and Rethrow" sap:VirtualizedContainerService.HintSize="242,250" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
